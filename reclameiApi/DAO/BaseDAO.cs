@@ -1,22 +1,19 @@
-﻿using Dapper;
+﻿using reclameiApi.DB;
 using System.Data;
 using System.Text;
-using reclameiApi.Models;
-using reclameiApi.DB;
+using Dapper;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Linq;
+using reclameiApi.Models;
 
 namespace reclameiApi.DAO
 {
     public abstract class BaseDao<T> where T : IModel
     {
-        private static readonly IDbConnection _connection;
+        protected static IDbConnection _connection;
 
         static BaseDao()
         {
             _connection = Connection.GetMysqlConnection();
-            _connection.Open();
         }
 
         public abstract string NomeTabela { get; }
@@ -28,64 +25,100 @@ namespace reclameiApi.DAO
                 obj.Id = Guid.NewGuid().ToString();
 
             string sql = $"INSERT INTO {NomeTabela}" +
-                         $" (id{GetInsertNomes()})" +
-                         $" VALUES (@Id{GetInsertValores()})";
+                         $" ({GetInsertNomes()})" +
+                         $" VALUES ({GetInsertValores()})";
 
-            await _connection.ExecuteAsync(sql, obj);
-        }
-
-        public async Task AlterarAsync(T obj)
-        {
-            string sql = $"UPDATE {NomeTabela}" +
-                         $" SET {GetUpdate()}" +
-                         " WHERE id = @Id";
-
-            await _connection.ExecuteAsync(sql, obj);
-        }
-
-        public async Task ExcluirAsync(string id)
-        {
-            string sql = $"DELETE FROM {NomeTabela} WHERE id = @Id";
-
-            await _connection.ExecuteAsync(sql, new { Id = id });
-        }
-
-        public async Task<IList<T>> RetornarTodosAsync()
-        {
-            string sql = $"SELECT * FROM {NomeTabela}";
-
-            var objetos = await _connection.QueryAsync<T>(sql);
-
-            return objetos.ToList();
-        }
-
-        public async Task<T> RetornarPorIdAsync(string id)
-        {
-            string sql = $"SELECT * FROM {NomeTabela} WHERE id = @Id";
-
-            var obj = await _connection.QuerySingleAsync<T>(sql, new { Id = id });
-
-            return obj;
-        }
-
-        private string GetInsertValores()
-        {
-            var sb = new StringBuilder();
-
-            foreach (var mapa in Mapas)
-                sb.Append($", @{mapa.Propriedade}");
-
-            return sb.ToString();
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+                await connection.ExecuteAsync(sql, obj);
+            }
         }
 
         private string GetInsertNomes()
         {
             var sb = new StringBuilder();
+            sb.Append("id"); // Adiciona explicitamente a coluna 'id'
 
             foreach (var mapa in Mapas)
-                sb.Append($", {mapa.Campo}");
+            {
+                if (mapa.Campo != "id")
+                {
+                    sb.Append($", {mapa.Campo}");
+                }
+            }
 
             return sb.ToString();
+        }
+
+        private string GetInsertValores()
+        {
+            var sb = new StringBuilder();
+            sb.Append("@Id"); // Adiciona explicitamente o valor da coluna 'id'
+
+            foreach (var mapa in Mapas)
+            {
+                if (mapa.Campo != "id")
+                {
+                    sb.Append($", @{mapa.Propriedade}");
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        public async Task AlterarAsync(T obj)
+        {
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+
+                string sql = $"UPDATE {NomeTabela}" +
+                             $" SET {GetUpdate()}" +
+                             " WHERE id = @Id";
+
+                await connection.ExecuteAsync(sql, obj);
+            }
+        }
+
+        public async Task ExcluirAsync(string id)
+        {
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+
+                string sql = $"DELETE FROM {NomeTabela} WHERE id = @Id";
+
+                await connection.ExecuteAsync(sql, new { Id = id });
+            }
+        }
+
+        public async Task<IList<T>> RetornarTodosAsync()
+        {
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+
+                string sql = $"SELECT * FROM {NomeTabela}";
+
+                var objetos = await connection.QueryAsync<T>(sql);
+
+                return objetos.ToList();
+            }
+        }
+
+        public async Task<T> RetornarPorIdAsync(string id)
+        {
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+
+                string sql = $"SELECT * FROM {NomeTabela} WHERE id = @Id";
+
+                var obj = await connection.QuerySingleOrDefaultAsync<T>(sql, new { Id = id });
+
+                return obj;
+            }
         }
 
         private string GetUpdate()
@@ -93,9 +126,14 @@ namespace reclameiApi.DAO
             var sb = new StringBuilder();
 
             foreach (var mapa in Mapas)
-                sb.Append($", {mapa.Campo}=@{mapa.Propriedade}");
+            {
+                if (mapa.Campo != "id")
+                {
+                    sb.Append($", {mapa.Campo}=@{mapa.Propriedade}");
+                }
+            }
 
-            return sb.ToString().Substring(1); 
+            return sb.ToString().Substring(2); // Remove a vírgula inicial
         }
     }
 
@@ -105,4 +143,3 @@ namespace reclameiApi.DAO
         public string Campo { get; set; } = "";
     }
 }
-
