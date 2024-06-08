@@ -8,10 +8,10 @@ namespace reclameiApi.DAO
 
         public override Mapa[] Mapas => new Mapa[]{  //aqui eu declaro os artibutos da minha classe
             new() { Propriedade = "Id", Campo = "id" },
-            new() { Propriedade = "Nome", Campo = "nome" },
+            new() { Propriedade = "Titulo", Campo = "titulo" },
             new() { Propriedade = "Conteudo", Campo = "conteudo" },
-            new() { Propriedade = "IdReclamante", Campo = "id_cliente" },
-            new() { Propriedade = "IdReclamada", Campo = "id_empresa" },
+            new() { Propriedade = "IdCliente", Campo = "id_cliente" },
+            new() { Propriedade = "IdEmpresa", Campo = "id_empresa" },
             new() { Propriedade = "Atendida", Campo = "atendida" }
         };
     }

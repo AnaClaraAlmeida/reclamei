@@ -64,10 +64,10 @@ namespace reclameiApi.Controllers
             objOrig.Titulo = obj.Titulo;
             objOrig.Conteudo = obj.Conteudo;
             objOrig.Atendida = obj.Atendida;
-            objOrig.Reclamante = obj.Reclamante;
-            objOrig.IdReclamante = obj.IdReclamante;
-            objOrig.Reclamada = obj.Reclamada;
-            objOrig.IdReclamada = obj.IdReclamada;
+            objOrig.Cliente = obj.Cliente;
+            objOrig.IdCliente = obj.IdCliente;
+            objOrig.Empresa = obj.Empresa;
+            objOrig.IdEmpresa = obj.IdEmpresa;
             objOrig.Respostas = obj.Respostas;
 
 

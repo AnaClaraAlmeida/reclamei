@@ -1,5 +1,136 @@
-﻿<h3>CadastraReclamacao</h3>
+﻿@page "/cadastraReclamacao"
+
+
+@using System.Net.Http
+@using System.Text.Json
+@using System.Text
+@using reclameiFront2.Helpers
+@using Microsoft.AspNetCore.Http
+
+@inject Api api
+
+<h3>Cadastrar Reclamação</h3>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <img src="https://media.discordapp.net/attachments/1155187165450473594/1249044463427260497/logo.png?ex=6665dece&is=66648d4e&hm=700bf5f9de7a34c7d188a14d61a55665843c0f769405de36f17e3ba53ce7112a&=&format=webp&quality=lossless&width=250&height=141" alt="Logo" class="img-fluid mx-auto d-block mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Cadastro de Reclamação</h5>
+                    <EditForm Model="@reclamacao" OnValidSubmit="EnviarReclamacao">
+                        <div class="form-group">
+                            <label for="titulo">Título</label>
+                            <InputText class="form-control" id="titulo" @bind-Value="reclamacao.Titulo" required />
+
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="conteudo">Conteúdo</label>
+                            <InputTextArea class="form-control" id="conteudo" @bind-Value="reclamacao.Conteudo" rows="4" required />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="empresa">Nome da Empresa da Reclamação</label>
+                            <select class="form-control" id="empresa" @bind="selectedEmpresaId">
+                                <option value="">Selecione uma empresa</option>
+                                @foreach (var empresa in empresas)
+                                {
+                                    <option value="@empresa.Id">@empresa.Nome</option>
+                                }
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success btn-block">Enviar</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
+    private List<Empresa> empresas = new List<Empresa>();
+    private string? selectedEmpresaId;
+    private Reclamacao reclamacao = new Reclamacao { Atendida = false, IdCliente = "string"};
 
+    private string UsuarioLogadoId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CarregarEmpresas();
+        //UsuarioLogadoId = HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId");
+
+       /*
+        if (HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId", out byte[] usuarioLogadoIdBytes))
+        {
+            UsuarioLogadoId = System.Text.Encoding.UTF8.GetString(usuarioLogadoIdBytes);
+        }
+        else
+        {
+            UsuarioLogadoId = null;
+        }*/
+
+    }
+
+    private async Task CarregarEmpresas()
+    {
+        try
+        {
+            var list = await api.GetAsync<List<Empresa>>("/api/Empresa","");
+            empresas = list;
+
+            
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar empresas: {ex.Message}");
+        }
+    }
+
+    private async Task EnviarReclamacao()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(selectedEmpresaId))
+            {
+                Console.WriteLine("Selecione uma empresa.");
+                return;
+            }
+
+            reclamacao.IdEmpresa = selectedEmpresaId;
+            //reclamacao.IdReclamante = HttpContext.
+
+            /*var json = JsonSerializer.Serialize(reclamacao);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");*/
+            var response = await api.PostAsync<Reclamacao>("/api/Reclamacao", reclamacao);
+            
+            Console.WriteLine("Reclamação enviada com sucesso!");
+     
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao enviar reclamação: {ex.Message}");
+        }
+    }
+
+    public class Empresa
+    {
+        public string Id { get; set; }
+        public string Nome { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
+        public string Cnpj { get; set; }
+    }
+
+    public class Reclamacao
+    {
+        public string Id { get; set; }
+        public string Titulo { get; set; }
+        public string Conteudo { get; set; }
+        public bool Atendida { get; set; }
+        public string IdCliente { get; set; }
+        public string IdEmpresa { get; set; }
+        
+    }
 }
