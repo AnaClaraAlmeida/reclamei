@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário - Reclamei</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap">
+</head>
+
+<body>
+
+    <div class="cabecalho">
+        <img src="../logo.png" alt="Logo">
+    </div>
+    <div class="login">
+        <form method="post" class="form">
+            <h2>Cadastro</h2>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="userType" value="cliente" checked>
+                    <span></span> Cliente
+                </label>
+                <label>
+                    <input type="radio" name="userType" value="empresa">
+                    <span></span> Empresa
+                </label>
+            </div>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" placeholder="Nome">
+            <label for="login">Login</label>
+            <input id="login" name="login" type="text" placeholder="Login">
+            <label for="senha">Senha</label>
+            <input id="senha" name="senha" type="password" placeholder="Senha">
+            <button type="submit">Cadastrar</button>
+            Já é cadastrado? <a href="">Logar!</a>
+        </form>
+    </div>
+</body>
+
+</html>

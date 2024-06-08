@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Reclamei</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap">
+</head>
+
+<body>
+
+    <div class="cabecalho">
+        <img src="../logo.png" alt="Logo">
+    </div>
+    <div class="login">
+        <form method="post" class="form">
+            <h2>Logar</h2>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="userType" value="cliente" checked>
+                    <span></span> Cliente
+                </label>
+                <label>
+                    <input type="radio" name="userType" value="empresa">
+                    <span></span> Empresa
+                </label>
+            </div>
+            <label for="username">Login</label>
+            <input id="username" name="username" type="text" placeholder="login">
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" placeholder="senha">
+
+
+            <button type="submit">Logar</button>
+        </form>
+    </div>
+</body>
+
+</html>

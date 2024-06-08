@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("reclameiFront")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c326ad9c90df254f230b36945ea027e1f814912")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40f24f97e686fde77eb430f2677be3555fcf984b")]
 [assembly: System.Reflection.AssemblyProductAttribute("reclameiFront")]
 [assembly: System.Reflection.AssemblyTitleAttribute("reclameiFront")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
