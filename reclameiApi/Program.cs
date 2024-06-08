@@ -6,7 +6,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Adicionar serviços CORS
+// Adicionar serviï¿½os CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder =>
@@ -30,11 +30,34 @@ app.UseHttpsRedirection();
 
 app.UseRouting(); // Adicione esta linha
 
-// Aplicar a política CORS
+// Aplicar a polï¿½tica CORS
 app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
+app.UseSession();
+
 app.MapControllers();
 
 app.Run();
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+
+    app.UseRouting();
+
+    app.UseSession(); // Adiciona o middleware de sessÃ£o
+    app.UseAuthorization();
+
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapRazorPages();
+    });
+}
