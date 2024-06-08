@@ -2059,19 +2059,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nikão\\.nuget\\packages\\": {}
+    "C:\\Users\\anacl\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nikão\\Documents\\reclamei\\reclameiFront\\reclameiFront.csproj",
+      "projectUniqueName": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\reclamei\\reclameiFront\\reclameiFront.csproj",
       "projectName": "reclameiFront",
-      "projectPath": "C:\\Users\\Nikão\\Documents\\reclamei\\reclameiFront\\reclameiFront.csproj",
-      "packagesPath": "C:\\Users\\Nikão\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nikão\\Documents\\reclamei\\reclameiFront\\obj\\",
+      "projectPath": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\reclamei\\reclameiFront\\reclameiFront.csproj",
+      "packagesPath": "C:\\Users\\anacl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\reclamei\\reclameiFront\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Nikão\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anacl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
