@@ -1,0 +1,154 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("../images/fundo.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+}
+
+    .cabecalho img {
+        max-height: 700px;
+        max-width: 100%;
+    }
+
+.login {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(50% - 20px);
+    height: 100vh;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.form h2 {
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+.form {
+    padding: 40px;
+    border: 3px solid #2f2f3b;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 400px;
+    background: #fcd99c8c;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #333;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 22px;
+    color: #001a2c;
+}
+
+    .form label {
+        display: block;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .form input,
+    .form button {
+        width: calc(100% - 20px);
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    .form label {
+        margin-top: 10px;
+    }
+
+    .form button {
+        margin-top: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #2f2f3b;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        font-size: 20px;
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+
+        .form button:hover {
+            background-color: #555;
+            color: orange;
+        }
+
+
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+    .radio-group label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .radio-group input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+        .radio-group input[type="radio"] + span {
+            position: absolute;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+        }
+
+        .radio-group input[type="radio"]:checked + span {
+            background-color: #001a2c;
+            border-color: #001a2c;
+        }
+
+            .radio-group input[type="radio"]:checked + span:after {
+                content: "";
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: white;
+            }
+
+    .radio-group label span {
+        margin-right: 10px;
+    }
+
+    .radio-group input[type="radio"]:focus + span {
+        outline: 2px solid #4CAF50;
+    }
