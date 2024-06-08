@@ -9,11 +9,11 @@ namespace reclameiApi.DAO
 {
     public abstract class BaseDao<T> where T : IModel
     {
-        protected static IDbConnection _connection;
+ 
 
         static BaseDao()
         {
-            _connection = Connection.GetMysqlConnection();
+
         }
 
         public abstract string NomeTabela { get; }
