@@ -1,4 +1,12 @@
 ﻿@page "/login"
+@page "/"
+
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@using reclameiFront2.Helpers
+@inject Api api
 
 <head>
     <link rel="stylesheet" href="css/style.css">
@@ -10,24 +18,57 @@
         <img src="images/logo.png" alt="Logo">
     </div>
     <div class="login">
-        <form method="post" class="form">
+        <EditForm Model="@loginModel" OnValidSubmit="@HandleValidSubmit">
             <h2>Logar</h2>
             <div class="radio-group">
                 <label>
-                    <input type="radio" name="UserType" value="cliente" checked>
+                    <input type="radio" name="UserType" value="cliente" @bindValue="loginModel.EhEmpresa">
                     <span></span> Cliente
                 </label>
                 <label>
-                    <input type="radio" name="UserType" value="empresa">
+                    <input type="radio" name="UserType" value="empresa" @bindValue="loginModel.EhEmpresa">
                     <span></span> Empresa
                 </label>
             </div>
             <label for="username">Login</label>
-            <input id="username" name="Username" type="text" placeholder="login">
+            <InputText id="username" @bind-Value="loginModel.Login" placeholder="login" />
             <label for="password">Senha</label>
-            <input id="password" name="Password" type="password" placeholder="senha">
+            <InputText id="password" @bind-Value="loginModel.Senha" type="password" placeholder="senha" />
 
             <button type="submit">Logar</button>
-        </form>
+        </EditForm>
     </div>
+
+    @code {
+        private LoginRequestDto loginModel = new LoginRequestDto();
+
+        private async Task HandleValidSubmit()
+        {
+            var response = await api.PostLoginAsync<LoginResponseDto,LoginRequestDto>("api/Auth/login", loginModel);
+
+            if (response != null && response.Id != "")
+            {
+                await JS.InvokeVoidAsync("localStorage.setItem", "UsuarioLogadoId", response.Id);
+                await JS.InvokeVoidAsync("localStorage.setItem", "TipoUsuario", response.TipoUsuario);
+                Navigation.NavigateTo("/home");
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public class LoginRequestDto
+        {
+            public string Login { get; set; }
+            public string Senha { get; set; }
+            public bool EhEmpresa { get; set; }
+        }
+
+        public class LoginResponseDto
+        {
+            public string Id { get; set; }
+            public string TipoUsuario { get; set; }
+        }
+    }
 </body>

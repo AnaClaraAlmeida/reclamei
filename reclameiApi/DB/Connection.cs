@@ -5,7 +5,7 @@ namespace reclameiApi.DB;
 
 public static class Connection
 {
-    private static string _connectionString = "Server=localhost;Port=3306;Database=reclamei;User=root;Password=Mysql123aluno;";
+    private static string _connectionString = "Server=localhost;Port=3306;Database=reclamei;User=root;Password=root;";
 
     public static IDbConnection GetMysqlConnection()
     {

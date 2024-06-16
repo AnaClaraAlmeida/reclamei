@@ -17,7 +17,7 @@ namespace reclameiApi.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<Cliente>> PostAsync([FromBody] LoginRequestDto request)
+        public async Task<ActionResult<LoginResponseDto>> PostAsync([FromBody] LoginRequestDto request)
         {
             
             if (request == null || string.IsNullOrWhiteSpace(request.Login) || string.IsNullOrWhiteSpace(request.Senha))
@@ -30,15 +30,30 @@ namespace reclameiApi.Controllers
 
 
             string id = "";
+            string tipoUser = "";
 
             if (request.ehEmpresa)
             {
                 empresa = await new EmpresaDAO().LoginAsync(request.Login, request.Senha);
-                id = cliente.Id;
+
+                if (empresa == null)
+                {
+                    return Unauthorized("Login ou senha inválidos.");
+                }
+
+                id = empresa.Id;
+                tipoUser = "EMPRESA";
             } else
             {
                 cliente = await new ClienteDAO().LoginAsync(request.Login, request.Senha);
+
+                if (cliente == null)
+                {
+                    return Unauthorized("Login ou senha inválidos.");
+                }
+
                 id = cliente.Id;
+                tipoUser = "CLIENTE";
             }
 
             if (cliente == null && empresa == null)
@@ -48,7 +63,11 @@ namespace reclameiApi.Controllers
 
             HttpContext.Session.SetString("UsuarioLogadoId", id);
 
-            return Ok(cliente);
+            LoginResponseDto responseDto = new LoginResponseDto();
+            responseDto.Id = id;
+            responseDto.TipoUsuario = tipoUser;
+
+            return Ok(responseDto);
         }
     }
 
@@ -57,5 +76,11 @@ namespace reclameiApi.Controllers
         public string Login { get; set; }
         public string Senha { get; set; }
         public bool ehEmpresa { get; set; }
+    }
+
+    public class LoginResponseDto
+    {
+        public string Id { get; set; }
+        public string TipoUsuario { get; set; }
     }
 }

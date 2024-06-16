@@ -8,6 +8,8 @@
 @using Microsoft.AspNetCore.Http
 
 @inject Api api
+@inject IJSRuntime JS
+
 
 <h3>Cadastrar Reclamação</h3>
 
@@ -54,22 +56,21 @@
     private string? selectedEmpresaId;
     private Reclamacao reclamacao = new Reclamacao { Atendida = false, IdCliente = "string"};
 
-    private string UsuarioLogadoId { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         await CarregarEmpresas();
         //UsuarioLogadoId = HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId");
 
-       /*
-        if (HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId", out byte[] usuarioLogadoIdBytes))
-        {
-            UsuarioLogadoId = System.Text.Encoding.UTF8.GetString(usuarioLogadoIdBytes);
-        }
-        else
-        {
-            UsuarioLogadoId = null;
-        }*/
+         /*
+         if (HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId", out byte[] usuarioLogadoIdBytes))
+             {
+             UsuarioLogadoId = System.Text.Encoding.UTF8.GetString(usuarioLogadoIdBytes);
+         }
+         else
+             {
+             UsuarioLogadoId = null;
+         }*/
 
     }
 
@@ -80,7 +81,7 @@
             var list = await api.GetAsync<List<Empresa>>("/api/Empresa","");
             empresas = list;
 
-            
+
         }
         catch (Exception ex)
         {
@@ -98,14 +99,20 @@
                 return;
             }
 
+            reclamacao.Atendida = false;
             reclamacao.IdEmpresa = selectedEmpresaId;
-            //reclamacao.IdReclamante = HttpContext.
+            reclamacao.IdCliente = await JS.InvokeAsync<string>("localStorage.getItem", "UsuarioLogadoId");
 
-            /*var json = JsonSerializer.Serialize(reclamacao);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");*/
+
+            Console.WriteLine("Reclamação dados:");
+            Console.WriteLine(reclamacao.IdEmpresa);
+            Console.WriteLine(reclamacao.IdCliente);
+            Console.WriteLine(reclamacao.Titulo);
+
             var response = await api.PostAsync<Reclamacao>("/api/Reclamacao", reclamacao);
             
             Console.WriteLine("Reclamação enviada com sucesso!");
+ 
      
         }
         catch (Exception ex)

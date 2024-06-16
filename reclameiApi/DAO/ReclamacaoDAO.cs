@@ -1,4 +1,6 @@
-﻿using reclameiApi.Models;
+﻿using Dapper;
+using reclameiApi.DB;
+using reclameiApi.Models;
 
 namespace reclameiApi.DAO
 {
@@ -10,9 +12,33 @@ namespace reclameiApi.DAO
             new() { Propriedade = "Id", Campo = "id" },
             new() { Propriedade = "Titulo", Campo = "titulo" },
             new() { Propriedade = "Conteudo", Campo = "conteudo" },
-            new() { Propriedade = "IdCliente", Campo = "id_cliente" },
-            new() { Propriedade = "IdEmpresa", Campo = "id_empresa" },
+            new() { Propriedade = "IdCliente", Campo = "idCliente" },
+            new() { Propriedade = "IdEmpresa", Campo = "idEmpresa" },
             new() { Propriedade = "Atendida", Campo = "atendida" }
         };
+
+        public async Task<List<Reclamacao>> GetAllByEmpresaAsync(string id)
+        {
+            string sql = $"SELECT * FROM {NomeTabela} WHERE idEmpresa = @IdEmpresa";
+
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+                var reclamacoes = await connection.QueryAsync<Reclamacao>(sql, new { IdEmpresa = id });
+                return reclamacoes.ToList();
+            }
+        }
+
+        public async Task<List<Reclamacao>> GetAllByClienteAsync(string id)
+        {
+            string sql = $"SELECT * FROM {NomeTabela} WHERE idCliente = @IdCliente";
+
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+                var reclamacoes = await connection.QueryAsync<Reclamacao>(sql, new { IdCliente = id });
+                return reclamacoes.ToList();
+            }
+        }
     }
 }

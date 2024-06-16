@@ -21,8 +21,8 @@ namespace reclameiApi.DAO
 
         public async Task InserirAsync(T obj)
         {
-            if (string.IsNullOrWhiteSpace(obj.Id))
-                obj.Id = Guid.NewGuid().ToString();
+            
+            obj.Id = Guid.NewGuid().ToString();
 
             string sql = $"INSERT INTO {NomeTabela}" +
                          $" ({GetInsertNomes()})" +

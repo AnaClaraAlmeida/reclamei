@@ -37,6 +37,22 @@ namespace reclameiApi.Controllers
             return obj;
         }
 
+        [HttpGet("Empresa/{id}")]
+        public async Task<ActionResult<IEnumerable<Reclamacao>>> GetByEmpresaId(string id)
+        {
+            var objs = await dao.GetAllByEmpresaAsync(id);
+
+            return objs;
+        }
+
+        [HttpGet("Cliente/{id}")]
+        public async Task<ActionResult<IEnumerable<Reclamacao>>> GetByClienteId(string id)
+        {
+            var objs = await dao.GetAllByClienteAsync(id);
+
+            return objs;
+        }
+
         [HttpPost]
         public async Task<ActionResult<Reclamacao>> PostAsync(Reclamacao obj)
         {
@@ -64,11 +80,11 @@ namespace reclameiApi.Controllers
             objOrig.Titulo = obj.Titulo;
             objOrig.Conteudo = obj.Conteudo;
             objOrig.Atendida = obj.Atendida;
-            objOrig.Cliente = obj.Cliente;
+            //objOrig.Cliente = obj.Cliente;
             objOrig.IdCliente = obj.IdCliente;
-            objOrig.Empresa = obj.Empresa;
+            //objOrig.Empresa = obj.Empresa;
             objOrig.IdEmpresa = obj.IdEmpresa;
-            objOrig.Respostas = obj.Respostas;
+            //objOrig.Respostas = obj.Respostas;
 
 
 
