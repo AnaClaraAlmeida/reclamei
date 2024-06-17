@@ -29,10 +29,10 @@ CREATE TABLE reclamacao (
   idEmpresa varchar(100) NOT NULL,
   atendida tinyint(1) DEFAULT NULL,
   PRIMARY KEY (id),
-  KEY reclamacao_cliente_FK (id_cliente),
-  KEY reclamacao_empresa_FK (id_empresa),
-  CONSTRAINT reclamacao_cliente_FK FOREIGN KEY (id_cliente) REFERENCES cliente (id),
-  CONSTRAINT reclamacao_empresa_FK FOREIGN KEY (id_empresa) REFERENCES empresa (id)
+  KEY reclamacao_cliente_FK (idCliente),
+  KEY reclamacao_empresa_FK (idEmpresa),
+  CONSTRAINT reclamacao_cliente_FK FOREIGN KEY (idCliente) REFERENCES cliente (id),
+  CONSTRAINT reclamacao_empresa_FK FOREIGN KEY (idEmpresa) REFERENCES empresa (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -43,12 +43,13 @@ CREATE TABLE resposta (
   idCliente varchar(100) DEFAULT NULL,
   idEmpresa varchar(100) DEFAULT NULL,
   PRIMARY KEY (id),
-  KEY resposta_reclamacao_FK (id_reclamacao),
-  KEY resposta_cliente_FK (id_cliente),
-  KEY resposta_empresa_FK (id_empresa),
-  CONSTRAINT resposta_cliente_FK FOREIGN KEY (id_cliente) REFERENCES cliente (id),
-  CONSTRAINT resposta_empresa_FK FOREIGN KEY (id_empresa) REFERENCES empresa (id),
-  CONSTRAINT resposta_reclamacao_FK FOREIGN KEY (id_reclamacao) REFERENCES reclamacao (id)
+  KEY resposta_reclamacao_FK (idReclamacao),
+  KEY resposta_cliente_FK (idCliente),
+  KEY resposta_empresa_FK (idEmpresa),
+  CONSTRAINT resposta_cliente_FK FOREIGN KEY (idCliente) REFERENCES cliente (id),
+  CONSTRAINT resposta_empresa_FK FOREIGN KEY (idEmpresa) REFERENCES empresa (id),
+  CONSTRAINT resposta_reclamacao_FK FOREIGN KEY (idReclamacao) REFERENCES reclamacao (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 
