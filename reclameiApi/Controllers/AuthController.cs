@@ -32,7 +32,7 @@ namespace reclameiApi.Controllers
             string id = "";
             string tipoUser = "";
 
-            if (request.ehEmpresa)
+            if (request.TipoUsuario.ToLower() == "empresa")
             {
                 empresa = await new EmpresaDAO().LoginAsync(request.Login, request.Senha);
 
@@ -69,13 +69,54 @@ namespace reclameiApi.Controllers
 
             return Ok(responseDto);
         }
+
+        [HttpPost("cadastro")]
+        public async Task PostCadastroAsync([FromBody] CadastroRequestDto request)
+        {
+
+            if (request == null || string.IsNullOrWhiteSpace(request.Login) || string.IsNullOrWhiteSpace(request.Senha))
+            {
+                BadRequest("Login e senha são obrigatórios.");
+            }
+
+            if (request.TipoUsuario.ToLower() == "empresa")
+            {
+                Empresa emp = new Empresa();
+                emp.Login = request.Login;
+                emp.Senha = request.Senha;
+                emp.Nome = request.Nome;
+                emp.CNPJ = "111222333444555";
+
+                await new EmpresaDAO().InserirAsync(emp);
+
+            }
+            else
+            {
+                Cliente cli = new Cliente();
+                cli.Login = request.Login;
+                cli.Senha = request.Senha;
+                cli.Nome = request.Nome;
+
+                await new ClienteDAO().InserirAsync(cli);
+
+            }
+
+        }
     }
 
     public class LoginRequestDto
     {
         public string Login { get; set; }
         public string Senha { get; set; }
-        public bool ehEmpresa { get; set; }
+        public string TipoUsuario { get; set; }
+    }
+
+    public class CadastroRequestDto
+    {
+        public string Login { get; set; }
+        public string Nome { get; set; }
+        public string Senha { get; set; }
+        public string TipoUsuario{ get; set; }
     }
 
     public class LoginResponseDto

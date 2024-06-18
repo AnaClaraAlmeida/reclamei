@@ -14,22 +14,20 @@
 </head>
 
 <body>
+    <div class="fakeBody">
     <div class="cabecalho">
         <img src="images/logo.png" alt="Logo">
     </div>
     <div class="login">
-        <EditForm Model="@loginModel" OnValidSubmit="@HandleValidSubmit">
+        <EditForm Model="@loginModel" OnValidSubmit="@HandleValidSubmit" class="form">
             <h2>Logar</h2>
-            <div class="radio-group">
-                <label>
-                    <input type="radio" name="UserType" value="cliente" @bindValue="loginModel.EhEmpresa">
-                    <span></span> Cliente
-                </label>
-                <label>
-                    <input type="radio" name="UserType" value="empresa" @bindValue="loginModel.EhEmpresa">
-                    <span></span> Empresa
-                </label>
-            </div>
+                <div class="dropdown-group">
+                    <label for="userType">Selecione o tipo de usuário:</label>
+                    <select id="userType" name="userType" @bind="loginModel.TipoUsuario">
+                        <option value="Cliente">Cliente</option>
+                        <option value="Empresa">Empresa</option>
+                    </select>
+                </div>
             <label for="username">Login</label>
             <InputText id="username" @bind-Value="loginModel.Login" placeholder="login" />
             <label for="password">Senha</label>
@@ -62,7 +60,7 @@
         {
             public string Login { get; set; }
             public string Senha { get; set; }
-            public bool EhEmpresa { get; set; }
+            public string TipoUsuario { get; set; }
         }
 
         public class LoginResponseDto
@@ -71,4 +69,5 @@
             public string TipoUsuario { get; set; }
         }
     }
+    </div>
 </body>

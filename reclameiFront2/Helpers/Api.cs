@@ -68,6 +68,22 @@ public class Api
         return JsonSerializer.Deserialize<T?>(responseBody, options);
     }
 
+    public async Task PostCadastroAsync<T>(string url, T objeto) where T : new()
+    {
+        using StringContent jsonContent = new(
+            JsonSerializer.Serialize(objeto),
+            System.Text.Encoding.UTF8,
+            "application/json"
+        );
+
+        using HttpResponseMessage response = await httpClient.PostAsync(
+            url,
+            jsonContent
+        );
+
+        response.EnsureSuccessStatusCode();
+    }
+
     public async Task<R?> PostLoginAsync<R,T>(string url, T objeto) where T : new()
     {
         using StringContent jsonContent = new(

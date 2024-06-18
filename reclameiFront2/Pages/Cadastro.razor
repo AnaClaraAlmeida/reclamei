@@ -1,0 +1,58 @@
+﻿@page "/cadastro"
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@using reclameiFront2.Helpers
+@using System.ComponentModel.DataAnnotations
+@inject Api api
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap">
+</head>
+
+
+    <div class="fakeBody">
+        <div class="cabecalho">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div class="login">
+            <EditForm Model="@cadastroModel" OnValidSubmit="@HandleValidSubmit" class="form">
+                <h2>Cadastro</h2>
+                <div class="dropdown-group">
+                    <label for="userType">Selecione o tipo de usuário:</label>
+                    <select id="userType" name="userType" @bind="cadastroModel.TipoUsuario">
+                        <option value="Cliente">Cliente</option>
+                        <option value="Empresa">Empresa</option>
+                    </select>
+                </div>
+                <label for="nome">Nome</label>
+                <InputText id="nome" @bind-Value="cadastroModel.Nome" placeholder="Nome" />
+                <label for="login">Login</label>
+                <InputText id="login" @bind-Value="cadastroModel.Login" placeholder="Login" />
+                <label for="senha">Senha</label>
+                <InputText id="senha" @bind-Value="cadastroModel.Senha" type="password" placeholder="Senha" />
+                <button type="submit">Cadastrar</button>
+                Já é cadastrado? <a href="">Logar!</a>
+            </EditForm>
+        </div>
+    </div>
+
+    @code {
+        private CadastroRequestDto cadastroModel = new CadastroRequestDto();
+
+        private async Task HandleValidSubmit()
+        {
+            await api.PostCadastroAsync<CadastroRequestDto>("api/Auth/cadastro", cadastroModel);
+            Navigation.NavigateTo("/login");
+        }
+
+        public class CadastroRequestDto
+        {
+            public string Login { get; set; }
+            public string Nome { get; set; }
+            public string Senha { get; set; }
+            public string TipoUsuario { get; set; }
+        }
+    }

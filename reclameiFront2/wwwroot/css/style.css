@@ -1,8 +1,8 @@
-﻿body {
+﻿.fakeBody {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("../images/fundo.png");
+    background-image: url("../fundo.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -21,10 +21,10 @@
     flex-direction: column;
 }
 
-    .cabecalho img {
-        max-height: 700px;
-        max-width: 100%;
-    }
+.cabecalho img {
+    max-height: 700px;
+    max-width: 100%;
+}
 
 .login {
     font-family: 'Montserrat', sans-serif;
@@ -58,43 +58,43 @@
     color: #001a2c;
 }
 
-    .form label {
-        display: block;
-        font-weight: bold;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
+.form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
-    .form input,
-    .form button {
-        width: calc(100% - 20px);
-        padding: 10px;
-        box-sizing: border-box;
-        border-radius: 10px;
-    }
+.form input,
+.form button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
 
-    .form label {
-        margin-top: 10px;
-    }
+.form label {
+    margin-top: 10px;
+}
 
-    .form button {
-        margin-top: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        background-color: #2f2f3b;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.3s;
-        font-size: 20px;
-        font-family: 'Baloo Bhai 2', cursive;
-    }
+.form button {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #2f2f3b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    font-family: 'Baloo Bhai 2', cursive;
+}
 
-        .form button:hover {
-            background-color: #555;
-            color: orange;
-        }
+.form button:hover {
+    background-color: #555;
+    color: orange;
+}
 
 
 
@@ -105,50 +105,50 @@
     font-family: 'Baloo Bhai 2', cursive;
 }
 
-    .radio-group label {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        position: relative;
-        padding-left: 25px;
-    }
+.radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+}
 
-    .radio-group input[type="radio"] {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-    }
+.radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
 
-        .radio-group input[type="radio"] + span {
-            position: absolute;
-            left: 0;
-            height: 18px;
-            width: 18px;
-            background-color: #fff;
-            border: 2px solid #ccc;
-            border-radius: 50%;
-        }
+.radio-group input[type="radio"] + span {
+    position: absolute;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
 
-        .radio-group input[type="radio"]:checked + span {
-            background-color: #001a2c;
-            border-color: #001a2c;
-        }
+.radio-group input[type="radio"]:checked + span {
+    background-color: #001a2c;
+    border-color: #001a2c;
+}
 
-            .radio-group input[type="radio"]:checked + span:after {
-                content: "";
-                position: absolute;
-                top: 4px;
-                left: 4px;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: white;
-            }
+.radio-group input[type="radio"]:checked + span:after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
 
-    .radio-group label span {
-        margin-right: 10px;
-    }
+.radio-group label span {
+    margin-right: 10px;
+}
 
-    .radio-group input[type="radio"]:focus + span {
-        outline: 2px solid #4CAF50;
-    }
+.radio-group input[type="radio"]:focus + span {
+    outline: 2px solid #4CAF50;
+}
