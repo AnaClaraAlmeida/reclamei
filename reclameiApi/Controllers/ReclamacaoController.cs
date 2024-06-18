@@ -18,7 +18,7 @@ namespace reclameiApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reclamacao>>> GetAsync()
         {
-            var objetos = await dao.RetornarTodosAsync();
+            var objetos = await dao.GetAllAsync();
 
             if (objetos == null)
                 return NotFound();

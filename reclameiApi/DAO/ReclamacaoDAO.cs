@@ -40,5 +40,26 @@ namespace reclameiApi.DAO
                 return reclamacoes.ToList();
             }
         }
+
+        public async Task<List<Reclamacao>> GetAllAsync()
+        {
+            string sql = $"SELECT * FROM {NomeTabela}";
+
+            using (var connection = Connection.GetMysqlConnection())
+            {
+                connection.Open();
+                var reclamacoes = await connection.QueryAsync<Reclamacao>(sql);
+
+                var listaAtualizada = reclamacoes.ToList();
+                foreach(Reclamacao r in listaAtualizada)
+                {
+                   r.Cliente = await new ClienteDAO().RetornarPorIdAsync(r.IdCliente);
+                   r.Empresa = await new EmpresaDAO().RetornarPorIdAsync(r.IdEmpresa);       
+                }
+                
+
+                return listaAtualizada;
+            }
+        }
     }
 }

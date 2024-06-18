@@ -1,0 +1,90 @@
+@page "/reclamacao"
+
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@using reclameiFront2.Helpers
+@inject Api api
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap">
+</head>
+
+<div>
+    <h2>Reclamações</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Empresa</th>
+                <th>Cliente</th>
+                <th>Respondida</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Objetos != null)
+            {
+                @foreach (var obj in Objetos)
+                {
+                    <tr>
+                        <td>@obj.Titulo</td>
+                        <td>@obj.Empresa.Nome</td>
+                        <td>@obj.Cliente.Nome</td>
+                        <td>@obj.Atendida</td>
+                        <td>
+                            <a href=# class="btn btn-secondary">Consultar</a>
+                            <a href=# class="btn btn-warning">Alterar</a>
+                            <a href=# class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4">Carregando reclamações...</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    public class Reclamacao
+    {
+        public string? Id { get; set; }
+        public string Titulo { get; set; } = "";
+        public string Conteudo { get; set; } = "";
+        public bool Atendida { get; set; }
+        public string IdCliente { get; set; }
+        public Cliente? Cliente { get; set; }
+        public string IdEmpresa { get; set; }
+        public Empresa? Empresa { get; set; }
+    }
+
+    public class Cliente
+    {
+        public string Id { get; set; } = "";
+        public string Nome { get; set; } = "";
+        public string Login { get; set; } = "";
+        public string Senha { get; set; } = "";
+    }
+    public class Empresa
+    {
+        public string Id { get; set; }
+        public string Nome { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
+        public string Cnpj { get; set; }
+    }
+
+    private IList<Reclamacao>? Objetos { get; set; } = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Objetos = await api.GetAsync<Reclamacao>("/api/Reclamacao");
+    }
+}

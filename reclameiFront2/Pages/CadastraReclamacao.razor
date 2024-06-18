@@ -62,15 +62,15 @@
         await CarregarEmpresas();
         //UsuarioLogadoId = HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId");
 
-         /*
-         if (HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId", out byte[] usuarioLogadoIdBytes))
-             {
-             UsuarioLogadoId = System.Text.Encoding.UTF8.GetString(usuarioLogadoIdBytes);
-         }
-         else
-             {
-             UsuarioLogadoId = null;
-         }*/
+        /*
+        if (HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId", out byte[] usuarioLogadoIdBytes))
+            {
+            UsuarioLogadoId = System.Text.Encoding.UTF8.GetString(usuarioLogadoIdBytes);
+        }
+            else
+            {
+            UsuarioLogadoId = null;
+        }*/
 
     }
 
@@ -110,10 +110,10 @@
             Console.WriteLine(reclamacao.Titulo);
 
             var response = await api.PostAsync<Reclamacao>("/api/Reclamacao", reclamacao);
-            
+
             Console.WriteLine("Reclamação enviada com sucesso!");
- 
-     
+
+
         }
         catch (Exception ex)
         {
@@ -132,9 +132,9 @@
 
     public class Reclamacao
     {
-        public string Id { get; set; }
-        public string Titulo { get; set; }
-        public string Conteudo { get; set; }
+        public string? Id { get; set; }
+        public string Titulo { get; set; } = "";
+        public string Conteudo { get; set; } = "";
         public bool Atendida { get; set; }
         public string IdCliente { get; set; }
         public string IdEmpresa { get; set; }

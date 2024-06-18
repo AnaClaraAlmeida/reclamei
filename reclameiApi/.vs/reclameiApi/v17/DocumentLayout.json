@@ -1,88 +1,88 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\",
+  "WorkspaceRootPath": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\controllers\\reclamacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:controllers\\reclamacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\dao\\basedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\basedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\dao\\reclamacaodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\reclamacaodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\dao\\empresadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\empresadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\dao\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\models\\reclamacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:models\\reclamacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\dao\\respostadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\respostadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\db\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\db\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:db\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\controllers\\reclamacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:controllers\\reclamacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\reclameiapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:reclameiapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\reclameiapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:reclameiapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\models\\reclamacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:models\\reclamacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\dao\\reclamacaodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\reclamacaodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\dao\\basedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\basedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\dao\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\dao\\empresadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\empresadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\dao\\respostadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:dao\\respostadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\reclameiapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:reclameiapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\reclameiapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:reclameiapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\nik\u00E3o\\documents\\reclamei\\reclameiapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|c:\\users\\anacl\\documents\\estudos\\ads\\periodo4\\programacao web\\reclamei\\reclameiapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{59E17649-6DDB-4F5D-B7CF-E8DBC02EDA4D}|reclameiApi.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 250,
+      "VerticalTabListWidth": 126,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,11 +90,76 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Reclamacao.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Reclamacao.cs",
+              "RelativeDocumentMoniker": "Models\\Reclamacao.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Reclamacao.cs",
+              "RelativeToolTip": "Models\\Reclamacao.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T22:27:15.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ReclamacaoController.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Controllers\\ReclamacaoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReclamacaoController.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Controllers\\ReclamacaoController.cs",
+              "RelativeToolTip": "Controllers\\ReclamacaoController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T22:25:11.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClienteDAO.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\ClienteDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\ClienteDAO.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\ClienteDAO.cs",
+              "RelativeToolTip": "DAO\\ClienteDAO.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T17:29:50.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseDAO.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\BaseDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\BaseDAO.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\BaseDAO.cs",
+              "RelativeToolTip": "DAO\\BaseDAO.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T20:01:47.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EmpresaDAO.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\EmpresaDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\EmpresaDAO.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\EmpresaDAO.cs",
+              "RelativeToolTip": "DAO\\EmpresaDAO.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T22:27:34.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Controllers\\ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Controllers\\ClienteController.cs",
               "RelativeToolTip": "Controllers\\ClienteController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -103,73 +168,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReclamacaoDAO.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\ReclamacaoDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\ReclamacaoDAO.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\ReclamacaoDAO.cs",
-              "RelativeToolTip": "DAO\\ReclamacaoDAO.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAADgvxMAAAAsAAAA",
+              "DocumentIndex": 3,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Cliente.cs",
+              "RelativeToolTip": "Models\\Cliente.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T22:27:44.204Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EmpresaDAO.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\EmpresaDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\EmpresaDAO.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\EmpresaDAO.cs",
-              "RelativeToolTip": "DAO\\EmpresaDAO.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T22:27:34.615Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Reclamacao.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Reclamacao.cs",
-              "RelativeDocumentMoniker": "Models\\Reclamacao.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Reclamacao.cs",
-              "RelativeToolTip": "Models\\Reclamacao.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T22:27:15.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReclamacaoController.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Controllers\\ReclamacaoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReclamacaoController.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Controllers\\ReclamacaoController.cs",
-              "RelativeToolTip": "Controllers\\ReclamacaoController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAUwC4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T22:25:11.218Z",
+              "WhenOpened": "2024-06-08T17:29:54.376Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAA1wB4AAAAAAAAA",
+              "Title": "Connection.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DB\\Connection.cs",
+              "RelativeDocumentMoniker": "DB\\Connection.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DB\\Connection.cs",
+              "RelativeToolTip": "DB\\Connection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T21:55:39.256Z",
+              "WhenOpened": "2024-06-08T19:51:50.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
+              "Title": "ReclamacaoDAO.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\ReclamacaoDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\ReclamacaoDAO.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\ReclamacaoDAO.cs",
+              "RelativeToolTip": "DAO\\ReclamacaoDAO.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAowD4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T22:27:44.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T17:29:27.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "reclameiApi.csproj",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\reclameiApi.csproj",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\reclameiApi.csproj",
               "RelativeDocumentMoniker": "reclameiApi.csproj",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\reclameiApi.csproj",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\reclameiApi.csproj",
               "RelativeToolTip": "reclameiApi.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -177,58 +232,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAAABkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T21:55:39.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "reclameiApi",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\reclameiApi.csproj",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\reclameiApi.csproj",
               "RelativeDocumentMoniker": "reclameiApi.csproj",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\reclameiApi.csproj",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\reclameiApi.csproj",
               "RelativeToolTip": "reclameiApi.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-06-08T20:34:18.921Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BaseDAO.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\BaseDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\BaseDAO.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\BaseDAO.cs",
-              "RelativeToolTip": "DAO\\BaseDAO.cs",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAcwDMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T20:01:47.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Connection.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DB\\Connection.cs",
-              "RelativeDocumentMoniker": "DB\\Connection.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DB\\Connection.cs",
-              "RelativeToolTip": "DB\\Connection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T19:51:50.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClienteDAO.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\ClienteDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\ClienteDAO.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\ClienteDAO.cs",
-              "RelativeToolTip": "DAO\\ClienteDAO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T17:29:50.182Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "RespostaDAO.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\RespostaDAO.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\RespostaDAO.cs",
               "RelativeDocumentMoniker": "DAO\\RespostaDAO.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\DAO\\RespostaDAO.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\DAO\\RespostaDAO.cs",
               "RelativeToolTip": "DAO\\RespostaDAO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -236,11 +268,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Program.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -248,11 +280,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Empresa.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Empresa.cs",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Empresa.cs",
               "RelativeDocumentMoniker": "Models\\Empresa.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Empresa.cs",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Models\\Empresa.cs",
               "RelativeToolTip": "Models\\Empresa.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -262,9 +294,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -274,37 +306,13 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\anacl\\Documents\\Estudos\\ADS\\Periodo4\\Programacao WEB\\reclamei\\reclameiApi\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-06-08T19:51:30.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Cliente.cs",
-              "RelativeToolTip": "Models\\Cliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T17:29:54.376Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Nik\u00E3o\\Documents\\reclamei\\reclameiApi\\Models\\Usuario.cs",
-              "RelativeToolTip": "Models\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T17:29:27.43Z"
             }
           ]
         }
