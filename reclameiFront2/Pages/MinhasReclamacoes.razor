@@ -1,4 +1,4 @@
-@page "/reclamacao"
+@page "/minhasReclamacoes"
 
 @using Microsoft.AspNetCore.Components.Forms
 @inject HttpClient Http
@@ -83,8 +83,18 @@
 
     private IList<Reclamacao>? Objetos { get; set; } = null;
 
+
     protected override async Task OnInitializedAsync()
     {
-        Objetos = await api.GetAsync<Reclamacao>("/api/Reclamacao");
+        string idLogado = await JS.InvokeAsync<string>("localStorage.getItem", "UsuarioLogadoId");
+        string tipoUsuario = await JS.InvokeAsync<string>("localStorage.getItem", "TipoUsuario");
+
+        if (tipoUsuario.ToLower() == "cliente")
+        {
+            Objetos = await api.GetAsync<Reclamacao>("/api/Reclamacao/Cliente/" + idLogado);
+        } else
+        {
+            Objetos = await api.GetAsync<Reclamacao>("/api/Reclamacao/Empresa/" + idLogado);
+        }
     }
 }

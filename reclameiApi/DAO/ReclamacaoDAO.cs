@@ -25,7 +25,15 @@ namespace reclameiApi.DAO
             {
                 connection.Open();
                 var reclamacoes = await connection.QueryAsync<Reclamacao>(sql, new { IdEmpresa = id });
-                return reclamacoes.ToList();
+
+                var listaAtualizada = reclamacoes.ToList();
+                foreach (Reclamacao r in listaAtualizada)
+                {
+                    r.Cliente = await new ClienteDAO().RetornarPorIdAsync(r.IdCliente);
+                    r.Empresa = await new EmpresaDAO().RetornarPorIdAsync(r.IdEmpresa);
+                }
+
+                return listaAtualizada;
             }
         }
 
@@ -37,7 +45,15 @@ namespace reclameiApi.DAO
             {
                 connection.Open();
                 var reclamacoes = await connection.QueryAsync<Reclamacao>(sql, new { IdCliente = id });
-                return reclamacoes.ToList();
+
+                var listaAtualizada = reclamacoes.ToList();
+                foreach (Reclamacao r in listaAtualizada)
+                {
+                    r.Cliente = await new ClienteDAO().RetornarPorIdAsync(r.IdCliente);
+                    r.Empresa = await new EmpresaDAO().RetornarPorIdAsync(r.IdEmpresa);
+                }
+
+                return listaAtualizada;
             }
         }
 

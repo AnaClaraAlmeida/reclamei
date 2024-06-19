@@ -37,31 +37,31 @@
         </EditForm>
     </div>
 
-    @code {
-        private LoginRequestDto loginModel = new LoginRequestDto();
+        @code {
+            private LoginRequestDto loginModel = new LoginRequestDto();
 
-        private async Task HandleValidSubmit()
-        {
-            var response = await api.PostLoginAsync<LoginResponseDto,LoginRequestDto>("api/Auth/login", loginModel);
-
-            if (response != null && response.Id != "")
+            private async Task HandleValidSubmit()
             {
-                await JS.InvokeVoidAsync("localStorage.setItem", "UsuarioLogadoId", response.Id);
-                await JS.InvokeVoidAsync("localStorage.setItem", "TipoUsuario", response.TipoUsuario);
-                Navigation.NavigateTo("/home");
-            }
-            else
-            {
-                return;
-            }
-        }
+                var response = await api.PostLoginAsync<LoginResponseDto,LoginRequestDto>("api/Auth/login", loginModel);
 
-        public class LoginRequestDto
-        {
-            public string Login { get; set; }
-            public string Senha { get; set; }
-            public string TipoUsuario { get; set; }
-        }
+                if (response != null && response.Id != "")
+                {
+                    await JS.InvokeVoidAsync("localStorage.setItem", "UsuarioLogadoId", response.Id);
+                    await JS.InvokeVoidAsync("localStorage.setItem", "TipoUsuario", response.TipoUsuario);
+                    Navigation.NavigateTo("/home");
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            public class LoginRequestDto
+            {
+                public string Login { get; set; }
+                public string Senha { get; set; }
+                public string TipoUsuario { get; set; } = "Cliente";
+            }
 
         public class LoginResponseDto
         {
