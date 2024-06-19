@@ -3,6 +3,7 @@
 @using Microsoft.AspNetCore.Components.Forms
 @inject HttpClient Http
 @inject NavigationManager Navigation
+
 @inject IJSRuntime JS
 @using reclameiFront2.Helpers
 @inject Api api
@@ -36,8 +37,12 @@
                         <td>@obj.Atendida</td>
                         <td>
                             <a href=# class="btn btn-secondary">Consultar</a>
-                            <a href=# class="btn btn-warning">Alterar</a>
-                            <a href=# class="btn btn-danger">Excluir</a>
+                            @if (tipoUsuario.ToLower().Equals("cliente"))
+                            {
+                                <a href=# class="btn btn-warning" @onclick="() => EditarReclamacao(obj.Id)">Alterar</a>
+                                <a href=# class="btn btn-danger" @onclick="() => DeletarReclamacao(obj.Id)">Excluir</a>
+                                <a href=# class="btn btn-success" @onclick="() => DefinirAtendida(obj.Id)">Definir como atendida</a>
+                            }
                         </td>
                     </tr>
                 }
@@ -82,12 +87,12 @@
     }
 
     private IList<Reclamacao>? Objetos { get; set; } = null;
-
+    string tipoUsuario = "";
 
     protected override async Task OnInitializedAsync()
     {
         string idLogado = await JS.InvokeAsync<string>("localStorage.getItem", "UsuarioLogadoId");
-        string tipoUsuario = await JS.InvokeAsync<string>("localStorage.getItem", "TipoUsuario");
+        tipoUsuario = await JS.InvokeAsync<string>("localStorage.getItem", "TipoUsuario");
 
         if (tipoUsuario.ToLower() == "cliente")
         {
@@ -97,4 +102,56 @@
             Objetos = await api.GetAsync<Reclamacao>("/api/Reclamacao/Empresa/" + idLogado);
         }
     }
+
+    private async Task EditarReclamacao(string id)
+    {
+        if (!string.IsNullOrEmpty(id))
+        {
+            string url = $"/editaReclamacao/{id}";
+            await JS.InvokeVoidAsync("eval", $"window.location.href='{url}'");
+        }
+        else
+        {
+            Console.WriteLine("ID da reclamação está nulo ou vazio.");
+        }
+    }
+
+    private async Task DefinirAtendida(string id)
+    {
+        try
+        {
+            var reclamacao = await api.GetAsync<Reclamacao>("/api/Reclamacao", id);
+            reclamacao.Atendida = true;
+            await api.PutAsync<Reclamacao>("/api/Reclamacao", id, reclamacao);
+            await JS.InvokeVoidAsync("alert", "Reclamação marcada como atendida com sucesso!");
+            await JS.InvokeVoidAsync("eval", "window.location.href='minhasReclamacoes'");
+           // await OnInitializedAsync();
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Erro ao carregar reclamação: {ex.Message}");
+            Console.WriteLine($"Erro ao carregar reclamação: {ex.Message}");
+        }
+
+    }
+
+    private async Task DeletarReclamacao(string id)
+    {
+        try
+        {
+            var reclamacao = await api.GetAsync<Reclamacao>("/api/Reclamacao", id);
+            reclamacao.Atendida = true;
+            await api.DeleteAsync("/api/Reclamacao", id);
+            await JS.InvokeVoidAsync("alert", "Reclamação deletada com sucesso!");
+            await JS.InvokeVoidAsync("eval", "window.location.href='minhasReclamacoes'");
+           // await OnInitializedAsync();
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Erro ao carregar reclamação: {ex.Message}");
+            Console.WriteLine($"Erro ao carregar reclamação: {ex.Message}");
+        }
+
+    }
+
 }

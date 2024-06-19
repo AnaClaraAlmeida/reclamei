@@ -48,7 +48,7 @@
                 {
                     await JS.InvokeVoidAsync("localStorage.setItem", "UsuarioLogadoId", response.Id);
                     await JS.InvokeVoidAsync("localStorage.setItem", "TipoUsuario", response.TipoUsuario);
-                    Navigation.NavigateTo("/home");
+                    Navigation.NavigateTo("/minhasReclamacoes");
                 }
                 else
                 {

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("../fundo.png");
+    background-image: url("../images/fundo.png");
     background-size: cover;
     background-position: center;
     display: flex;
