@@ -15,8 +15,8 @@
 
 <div>
     <h2>Reclamações</h2>
-    <table>
-        <thead>
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
                 <th>Titulo</th>
                 <th>Empresa</th>
@@ -34,9 +34,9 @@
                         <td>@obj.Titulo</td>
                         <td>@obj.Empresa.Nome</td>
                         <td>@obj.Cliente.Nome</td>
-                        <td>@obj.Atendida</td>
+                        <td>@(obj.Atendida ? "Sim" : "Não")</td>
                         <td>
-                            <a href=# class="btn btn-secondary">Consultar</a>
+                            <a href=# class="btn btn-secondary" @onclick="() => ConsultarReclamacao(obj.Id)">Consultar</a>
                             @if (tipoUsuario.ToLower().Equals("cliente"))
                             {
                                 <a href=# class="btn btn-warning" @onclick="() => EditarReclamacao(obj.Id)">Alterar</a>
@@ -97,7 +97,8 @@
         if (tipoUsuario.ToLower() == "cliente")
         {
             Objetos = await api.GetAsync<Reclamacao>("/api/Reclamacao/Cliente/" + idLogado);
-        } else
+        }
+        else
         {
             Objetos = await api.GetAsync<Reclamacao>("/api/Reclamacao/Empresa/" + idLogado);
         }
@@ -116,6 +117,21 @@
         }
     }
 
+
+    private async Task ConsultarReclamacao(string id)
+    {
+        if (!string.IsNullOrEmpty(id))
+        {
+            string url = $"/consultaReclamacao/{id}";
+            await JS.InvokeVoidAsync("eval", $"window.location.href='{url}'");
+        }
+        else
+        {
+            Console.WriteLine("ID da reclamação está nulo ou vazio.");
+        }
+    }
+
+
     private async Task DefinirAtendida(string id)
     {
         try
@@ -125,7 +141,7 @@
             await api.PutAsync<Reclamacao>("/api/Reclamacao", id, reclamacao);
             await JS.InvokeVoidAsync("alert", "Reclamação marcada como atendida com sucesso!");
             await JS.InvokeVoidAsync("eval", "window.location.href='minhasReclamacoes'");
-           // await OnInitializedAsync();
+            // await OnInitializedAsync();
         }
         catch (Exception ex)
         {
@@ -144,7 +160,7 @@
             await api.DeleteAsync("/api/Reclamacao", id);
             await JS.InvokeVoidAsync("alert", "Reclamação deletada com sucesso!");
             await JS.InvokeVoidAsync("eval", "window.location.href='minhasReclamacoes'");
-           // await OnInitializedAsync();
+            // await OnInitializedAsync();
         }
         catch (Exception ex)
         {

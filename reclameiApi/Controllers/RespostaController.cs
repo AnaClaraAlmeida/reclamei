@@ -60,11 +60,9 @@ namespace reclameiApi.Controllers
             if (objOrig == null)
                 return NotFound();
 
-
-            objOrig.Autor = obj.Autor;
+            
             objOrig.Conteudo = obj.Conteudo;
             objOrig.IdReclamacao = obj.IdReclamacao;
-            objOrig.IdCliente = obj.IdCliente;
             objOrig.IdEmpresa = obj.IdEmpresa;
 
 

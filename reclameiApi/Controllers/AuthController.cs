@@ -32,6 +32,14 @@ namespace reclameiApi.Controllers
             string id = "";
             string tipoUser = "";
 
+            if (request.TipoUsuario == null)
+            {
+                request.TipoUsuario = "cliente";
+
+                tipoUser = "CLIENTE";
+            }
+
+
             if (request.TipoUsuario.ToLower() == "empresa")
             {
                 empresa = await new EmpresaDAO().LoginAsync(request.Login, request.Senha);
@@ -77,6 +85,11 @@ namespace reclameiApi.Controllers
             if (request == null || string.IsNullOrWhiteSpace(request.Login) || string.IsNullOrWhiteSpace(request.Senha))
             {
                 BadRequest("Login e senha são obrigatórios.");
+            }
+
+            if (request.TipoUsuario == null)
+            {
+                request.TipoUsuario = "cliente";
             }
 
             if (request.TipoUsuario.ToLower() == "empresa")

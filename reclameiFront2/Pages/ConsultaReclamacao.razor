@@ -1,0 +1,193 @@
+﻿@page "/consultaReclamacao/{id}"
+
+@using System.Net.Http
+@using System.Text.Json
+@using System.Text
+@using reclameiFront2.Helpers
+@using Microsoft.AspNetCore.Http
+
+@inject NavigationManager Navigation
+@inject Api api
+@inject IJSRuntime JS
+
+<h3>Consulta Reclamação</h3>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Detalhes da Reclamação</h5>
+                    @if (reclamacao != null)
+                    {
+                        <div class="form-group">
+                            <label for="titulo">Título:</label>
+                            <p>@reclamacao.Titulo</p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="conteudo">Conteúdo:</label>
+                            <p>@reclamacao.Conteudo</p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="empresa">Nome da Empresa:</label>
+                            <p>@(empresas.FirstOrDefault(e => e.Id == reclamacao.IdEmpresa)?.Nome ?? "Empresa não encontrada")</p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="cliente">Nome do Cliente:</label>
+                            <p>@(clientes.FirstOrDefault(e => e.Id == reclamacao.IdCliente)?.Nome ?? "Cliente não encontrado")</p>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="atendida">Atendida:</label>
+                            <p>@(reclamacao.Atendida ? "Sim" : "Não")</p>
+                        </div>
+                        <br>
+                        <button class="btn btn-secondary btn-block" @onclick="Voltar">Voltar</button>
+
+                        @if (tipoUser.ToLower().Equals("empresa")) {
+                            <h5 class="card-title text-center mt-4">Responder Reclamação</h5>
+                            <EditForm Model="@resposta" OnValidSubmit="CadastrarResposta">
+
+                                <div class="form-group">
+                                    <label for="respostaConteudo">Conteúdo da Resposta:</label>
+                                    <InputTextArea class="form-control" id="respostaConteudo" @bind-Value="resposta.Conteudo" rows="4" required />
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-success btn-block">Enviar Resposta</button>
+                            </EditForm>
+                        }
+                    }
+                    else
+                    {
+                        <p>Carregando dados...</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Empresa> empresas = new List<Empresa>();
+    private List<Cliente> clientes = new List<Cliente>();
+    private Reclamacao reclamacao = null;
+    private Resposta resposta = new Resposta();
+
+    private string tipoUser { get; set; }
+
+
+    [Parameter]
+    public string id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CarregarEmpresas();
+        await CarregarReclamacao();
+        await CarregarClientes();
+        tipoUser = await JS.InvokeAsync<string>("localStorage.getItem", "TipoUsuario");
+    }
+
+    private async Task CarregarEmpresas()
+    {
+        try
+        {
+            var list = await api.GetAsync<List<Empresa>>("/api/Empresa", "");
+            empresas = list;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar empresas: {ex.Message}");
+        }
+    }
+
+    private async Task CarregarClientes()
+    {
+        try
+        {
+            var list = await api.GetAsync<List<Cliente>>("/api/Cliente", "");
+            clientes = list;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar clientes: {ex.Message}");
+        }
+    }
+
+    private async Task CarregarReclamacao()
+    {
+        try
+        {
+            reclamacao = await api.GetAsync<Reclamacao>("/api/Reclamacao", id);
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Erro ao carregar reclamação: {ex.Message}");
+            Console.WriteLine($"Erro ao carregar reclamação: {ex.Message}");
+        }
+    }
+
+    private async Task CadastrarResposta()
+    {
+        try
+        {
+            var idLogado = await JS.InvokeAsync<string>("localStorage.getItem", "UsuarioLogadoId");
+
+            resposta.IdEmpresa = idLogado;
+            resposta.IdReclamacao = reclamacao.Id;
+
+            await api.PostAsync<Resposta>("/api/Resposta", resposta);
+
+            await JS.InvokeVoidAsync("alert", "Resposta enviada com sucesso!");
+            
+
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Erro ao enviar resposta: {ex.Message}");
+            Console.WriteLine($"Erro ao enviar resposta: {ex.Message}");
+        }
+    }
+
+    private void Voltar()
+    {
+        Navigation.NavigateTo("/minhasReclamacoes");
+    }
+
+    public class Empresa
+    {
+        public string Id { get; set; }
+        public string Nome { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
+        public string Cnpj { get; set; }
+    }
+
+    public class Cliente
+    {
+        public string Id { get; set; }
+        public string Nome { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
+    }
+
+    public class Reclamacao
+    {
+        public string? Id { get; set; }
+        public string Titulo { get; set; } = "";
+        public string Conteudo { get; set; } = "";
+        public bool Atendida { get; set; }
+        public string IdCliente { get; set; }
+        public string IdEmpresa { get; set; }
+    }
+
+    public class Resposta
+    {
+        public string Id { get; set; } = "";
+        public string Conteudo { get; set; }
+        public string IdReclamacao { get; set; }
+        public string? IdEmpresa { get; set; }
+    }
+}

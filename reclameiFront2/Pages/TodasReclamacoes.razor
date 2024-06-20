@@ -31,7 +31,7 @@
                         <td>@obj.Titulo</td>
                         <td>@obj.Empresa.Nome</td>
                         <td>@obj.Cliente.Nome</td>
-                        <td>@obj.Atendida</td>
+                        <td>@(obj.Atendida ? "Sim" : "Não")</td>
                     </tr>
                 }
             }
