@@ -40,13 +40,10 @@ CREATE TABLE resposta (
   id varchar(100) NOT NULL,
   conteudo varchar(1000) NOT NULL,
   idReclamacao varchar(100) NOT NULL,
-  idCliente varchar(100) DEFAULT NULL,
   idEmpresa varchar(100) DEFAULT NULL,
   PRIMARY KEY (id),
   KEY resposta_reclamacao_FK (idReclamacao),
-  KEY resposta_cliente_FK (idCliente),
   KEY resposta_empresa_FK (idEmpresa),
-  CONSTRAINT resposta_cliente_FK FOREIGN KEY (idCliente) REFERENCES cliente (id),
   CONSTRAINT resposta_empresa_FK FOREIGN KEY (idEmpresa) REFERENCES empresa (id),
   CONSTRAINT resposta_reclamacao_FK FOREIGN KEY (idReclamacao) REFERENCES reclamacao (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
