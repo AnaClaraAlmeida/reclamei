@@ -14,7 +14,7 @@
 </head>
 
 <div>
-    <h2>Reclamações</h2>
+    <h3>Reclamações</h3>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -36,7 +36,7 @@
                         <td>@obj.Cliente.Nome</td>
                         <td>@(obj.Atendida ? "Sim" : "Não")</td>
                         <td>
-                            <a href=# class="btn btn-secondary" @onclick="() => ConsultarReclamacao(obj.Id)">Consultar</a>
+                            <a href=# class="btn btn-primary" @onclick="() => ConsultarReclamacao(obj.Id)">Consultar</a>
                             @if (tipoUsuario.ToLower().Equals("cliente"))
                             {
                                 <a href=# class="btn btn-warning" @onclick="() => EditarReclamacao(obj.Id)">Alterar</a>

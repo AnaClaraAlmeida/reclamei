@@ -10,7 +10,9 @@
 @inject Api api
 @inject IJSRuntime JS
 
-
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <h3>Cadastrar Reclamação</h3>
 
 <div class="container mt-5">
@@ -19,8 +21,9 @@
             
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Cadastro de Reclamação</h5>
+                    <div class="loguinho"><img src="images/logo.png" alt="Logo"></div>
                     <EditForm Model="@reclamacao" OnValidSubmit="EnviarReclamacao">
+                        
                         <div class="form-group">
                             <label for="titulo">Título</label>
                             <InputText class="form-control" id="titulo" @bind-Value="reclamacao.Titulo" required />
@@ -43,7 +46,7 @@
                             </select>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-success btn-block">Enviar</button>
+                        <button type="submit" class="btn btn-success btn-block"> Enviar</button>
                     </EditForm>
                 </div>
             </div>
