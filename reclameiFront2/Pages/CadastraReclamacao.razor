@@ -54,11 +54,20 @@
 @code {
     private List<Empresa> empresas = new List<Empresa>();
     private string? selectedEmpresaId;
-    private Reclamacao reclamacao = new Reclamacao { Atendida = false, IdCliente = "string"};
-
+    private Reclamacao reclamacao = new Reclamacao { Atendida = false, IdCliente = ""};
 
     protected override async Task OnInitializedAsync()
     {
+        var tipoUser = await JS.InvokeAsync<string>("localStorage.getItem", "TipoUsuario");
+
+
+        if (tipoUser != null && tipoUser.ToLower().Equals("empresa"))
+        {
+            await JS.InvokeVoidAsync("eval", $"window.location.href='/login'");
+            await JS.InvokeVoidAsync("alert", "Empresa não pode registrar uma reclamação");
+
+        }
+
         await CarregarEmpresas();
         //UsuarioLogadoId = HttpContextAccessor.HttpContext.Session.TryGetValue("UsuarioLogadoId");
 
@@ -112,6 +121,8 @@
             var response = await api.PostAsync<Reclamacao>("/api/Reclamacao", reclamacao);
 
             Console.WriteLine("Reclamação enviada com sucesso!");
+            await JS.InvokeVoidAsync("eval", $"window.location.href='/minhasReclamacoes'");
+            await JS.InvokeVoidAsync("alert", "Reclamação registrada com sucesso!");
 
 
         }

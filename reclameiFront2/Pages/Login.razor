@@ -48,7 +48,8 @@
                 {
                     await JS.InvokeVoidAsync("localStorage.setItem", "UsuarioLogadoId", response.Id);
                     await JS.InvokeVoidAsync("localStorage.setItem", "TipoUsuario", response.TipoUsuario);
-                    Navigation.NavigateTo("/minhasReclamacoes");
+                    await JS.InvokeVoidAsync("eval", $"window.location.href='/minhasReclamacoes'");
+                    //Navigation.NavigateTo("/minhasReclamacoes");
                 }
                 else
                 {

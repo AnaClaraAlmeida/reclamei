@@ -1,0 +1,20 @@
+﻿@page "/logout"
+
+@inject IJSRuntime JS
+
+<h3>Logout</h3>
+
+
+<h4>Deslogando...</h4>
+
+@code {
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await JS.InvokeAsync<string>("localStorage.removeItem", "TipoUsuario");
+        await JS.InvokeAsync<string>("localStorage.removeItem", "UsuarioLogadoId");
+        await JS.InvokeVoidAsync("eval", $"window.location.href='/login'");
+
+
+    }
+}

@@ -1,9 +1,14 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
 <div class="page">
 
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    @if(!tipoUser.Equals(""))
+    {
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+    }
+
 
     <main>
         <div class="top-row px-4">
@@ -15,3 +20,21 @@
         </article>
     </main>
 </div>
+
+@code {
+
+
+    private string? tipoUser { get; set; } = "";
+    protected override async Task OnInitializedAsync()
+    {       
+        tipoUser = await JS.InvokeAsync<string>("localStorage.getItem", "TipoUsuario");
+
+        if (tipoUser==null)
+        {
+            tipoUser = "";
+        }
+
+    }
+
+
+}

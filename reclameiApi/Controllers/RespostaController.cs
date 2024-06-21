@@ -37,6 +37,19 @@ namespace reclameiApi.Controllers
             return obj;
         }
 
+        [HttpGet("Reclamacao/{id}")]
+        public async Task<ActionResult<Resposta>> GetByReclamacaoId(string id)
+        {
+            var obj = await dao.GetRespostaByReclamacaoId(id);
+
+            if (obj == null)
+            {
+                return new Resposta();
+            }
+
+            return obj;
+        }
+
         [HttpPost]
         public async Task<ActionResult<Resposta>> PostAsync(Resposta obj)
         {

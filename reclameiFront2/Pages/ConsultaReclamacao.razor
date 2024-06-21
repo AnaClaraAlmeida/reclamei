@@ -37,7 +37,7 @@
                         <br>
                         <div class="form-group">
                             <label for="cliente">Nome do Cliente:</label>
-                            <p>@(clientes.FirstOrDefault(e => e.Id == reclamacao.IdCliente)?.Nome ?? "Cliente não encontrado")</p>
+                            <p>@(clientes.FirstOrDefault(e => e.Id == reclamacao.IdCliente)?.Nome ?? "Cliente não encontrada")</p>
                         </div>
                         <br>
                         <div class="form-group">
@@ -47,7 +47,9 @@
                         <br>
                         <button class="btn btn-secondary btn-block" @onclick="Voltar">Voltar</button>
 
-                        @if (tipoUser.ToLower().Equals("empresa")) {
+
+                        @if (tipoUser.ToLower().Equals("empresa") && resposta != null && resposta.Id == "")
+                        {
                             <h5 class="card-title text-center mt-4">Responder Reclamação</h5>
                             <EditForm Model="@resposta" OnValidSubmit="CadastrarResposta">
 
@@ -59,6 +61,7 @@
                                 <button type="submit" class="btn btn-success btn-block">Enviar Resposta</button>
                             </EditForm>
                         }
+
                     }
                     else
                     {
@@ -66,6 +69,20 @@
                     }
                 </div>
             </div>
+
+            @if (resposta != null && resposta.Id != "")
+            {
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">A empresa @(empresas.FirstOrDefault(e => e.Id == reclamacao.IdEmpresa)?.Nome ?? "Empresa não encontrada") respondeu:</h5>
+                        <div class="form-group">
+                            <label for="respostaConteudo">Conteúdo da Resposta:</label>
+                            <p>@resposta.Conteudo</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
         </div>
     </div>
 </div>
@@ -74,7 +91,7 @@
     private List<Empresa> empresas = new List<Empresa>();
     private List<Cliente> clientes = new List<Cliente>();
     private Reclamacao reclamacao = null;
-    private Resposta resposta = new Resposta();
+    private Resposta resposta = null;
 
     private string tipoUser { get; set; }
 
@@ -87,6 +104,7 @@
         await CarregarEmpresas();
         await CarregarReclamacao();
         await CarregarClientes();
+        await CarregarResposta();
         tipoUser = await JS.InvokeAsync<string>("localStorage.getItem", "TipoUsuario");
     }
 
@@ -129,6 +147,19 @@
         }
     }
 
+    private async Task CarregarResposta()
+    {
+        try
+        {
+            resposta = await api.GetAsync<Resposta>("/api/Resposta/Reclamacao", id);
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", $"Erro ao carregar resposta: {ex.Message}");
+            Console.WriteLine($"Erro ao carregar reclamação: {ex.Message}");
+        }
+    }
+
     private async Task CadastrarResposta()
     {
         try
@@ -140,8 +171,9 @@
 
             await api.PostAsync<Resposta>("/api/Resposta", resposta);
 
-            await JS.InvokeVoidAsync("alert", "Resposta enviada com sucesso!");
             
+            await JS.InvokeVoidAsync("eval", $"window.location.href='/minhasReclamacoes'");
+            await JS.InvokeVoidAsync("alert", "Resposta enviada com sucesso!");
 
         }
         catch (Exception ex)
